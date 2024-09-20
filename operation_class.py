@@ -35,3 +35,4 @@ class IntArray:
         plt.grid()
         plt.show()
         
+        
