@@ -38,16 +38,34 @@ def file_handling():
             int_values = [int(val) for val in values if val.strip()] 
             lines.append(int_values)
         data_frame = np.array([np.array(row) for row in lines],dtype='object')
-        for row in data_frame:
-            for i in row:
-                print(type(i))
+        # for row in data_frame:
+        #     for i in row:
+        #         print(type(i))
                 
         return data_frame
     
 def mean_products(data_frame):
     for i in range(len(data_frame)):
         average = np.mean(data_frame[i])
-        print(f"On Average, one employee from {i}. company pproduced {average} products ")
+        print(f"On Average, one employee from {i+1}. company produced {average} products ")
+    
+    sum_products = 0
+    num_employee = 0
+   
+    for row in data_frame:
+        for elements in row:
+            num_employee += 1
+    
+    for row in range(len(data_frame)):
+        row_sum = np.sum(data_frame[row])
+        sum_products += row_sum
+    
+    total_mean = sum_products/num_employee
+    
+    print(f"Total Mean is {total_mean} per employee")
+    
+    
+            
             
         
         
