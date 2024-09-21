@@ -44,6 +44,13 @@ def file_handling():
                 
         return data_frame
     
+def mean_products(data_frame):
+    for i in range(len(data_frame)):
+        average = np.mean(data_frame[i])
+        print(f"On Average, one employee from {i}. company pproduced {average} products ")
+            
+        
+        
 
 def main():
     data_frame = file_handling()
@@ -55,6 +62,8 @@ def main():
     first_branch.show_data()
     max_productivity(data_frame)
     min_productivity(data_frame)
+    mean_products(data_frame)
+    
     
     
 main() 
